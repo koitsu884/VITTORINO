@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+<siteMapNode title="Home" description="Home" url="~/Index.aspx" >
+  <siteMapNode title="About Us" description="About us"  url="~/aboutus.aspx" >
+    <siteMapNode title="Customer's Voice" description="Customer's voice"  url="~/Aboutus/CustomersVoice.aspx" />
+    <siteMapNode title="Privacy policy" description="Privacy policy"  url="~/Aboutus/privacypolicy.aspx" />
+  </siteMapNode>
+  <siteMapNode title="Products"  description="Products" url="~/products.aspx" >
+    <siteMapNode title="Handbags"  description="Handbags" url="~/products/Handbags.aspx" />
+    <siteMapNode title="Wallets"  description="Wallets" url="~/products/Wallets.aspx" />
+    <siteMapNode title="Cardcases"  description="Cardcases" url="~/products/Cardcases.aspx" />
+  </siteMapNode>
+  <siteMapNode title="Contact"  description="Contact Information" url="~/contact.aspx" />
+  <siteMapNode title="Manage account"  description="Manage account" url="~/register.aspx" >
+    <siteMapNode title="User information"  description="Change user information" url="~/MyPage/mypage.aspx" />
+    <siteMapNode title="Order history"  description="Order history" url="~/MyPage/OrderHistory.aspx" />
+    <siteMapNode title="Shopping cart"  description="Shopping cart" url="~/ShoppingCart.aspx" />
+  </siteMapNode>
+</siteMapNode>  
+</siteMap>

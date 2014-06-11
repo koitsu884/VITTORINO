@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<asp:Image ID="Image1" runat="server" CssClass="bg" ImageUrl="~/images/layout/background.jpg" />
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Path = "~/Scripts/jquery-1.10.2.min.js" />
+            <asp:ScriptReference Path = "~/Scripts/jquery.slides.min.js" />
+            <asp:ScriptReference Path = "~/Scripts/mosaic.1.0.1.min.js" />
+            <asp:ScriptReference Path = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAkNEEWRiThaVrAe960mEwzZWSnapI4r-I&sensor=true" />
+        </Scripts>
+    </asp:ScriptManager>
+
+    <div id="container">
+       <div id="header">
+           <div id="logo">
+                <asp:HyperLink runat="server" NavigateUrl="~/Index.aspx">
+                <asp:Image ID="Logo" runat="server" ImageUrl="~/images/layout/Logo2.png" />  
+                </asp:HyperLink>
+            </div>
+           <div id ="login_form">
+           <asp:LoginView ID="LoginView1" runat="server">
+           <AnonymousTemplate>
+            <asp:Login ID="Login1" runat="server"  ForeColor="White" 
+            Orientation="Horizontal" TitleText="" DestinationPageUrl="~/Index.aspx" 
+            DisplayRememberMe="False" CreateUserUrl="~/register.aspx" CreateUserText="Make new account" 
+                   Font-Size="Small" onauthenticate="Login1_Authenticate1" 
+                   LabelStyle-ForeColor="White" LoginButtonStyle-BackColor="#221111" 
+                   LoginButtonText="Login" PasswordLabelText="Password:" 
+                   UserNameLabelText="User name:" FailureText="Login failed" 
+                   PasswordRequiredErrorMessage="Enter password" 
+                   UserNameRequiredErrorMessage="Enter user name">
+                <LabelStyle ForeColor="White" />
+                <LoginButtonStyle Font-Size="Small" Height="20px" BorderColor="#333333" 
+                    BorderStyle="Solid" BorderWidth="1px" ForeColor="White" />
+                <TextBoxStyle Font-Size="Small" Width="100px" />
+            </asp:Login>
+           </AnonymousTemplate>
+           <LoggedInTemplate>
+               <asp:LoginName ID="LoginName1" runat="server" FormatString="Logged in as {0}" />
+               <asp:LoginStatus ID="LoginStatus1" runat="server" />
+           </LoggedInTemplate>
+           <RoleGroups>
+               <asp:RoleGroup Roles="Admin">
+                   <ContentTemplate>
+                   <asp:HyperLink ID = "HyperLink1" runat="server" NavigateUrl="~/Management/products.aspx">Manage Site</asp:HyperLink>
+                   or<asp:LoginStatus ID="LoginStatus1" runat="server" />
+                   </ContentTemplate>
+               </asp:RoleGroup>
+           </RoleGroups>
+           </asp:LoginView>
+           <br />      
+            </div>            
+        </div>
+        <%-- end header --%>
+        <div class="menu">
+            <div id="breadcrumbs">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Size="X-Small">
+                </asp:SiteMapPath>
+            </div>
+            <div class = "box1">
+            <h3> Search</h3>
+            <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox><asp:Button ID="btnSearch"
+                runat="server" Text="Search" onclick="btnSearch_Click" />
+            </div>
+            <div class="box1">
+            <h3>Shopping cart</h3>
+            <asp:HyperLink ID="CartLink" runat="server" NavigateUrl="~/ShoppingCart.aspx"><asp:Label ID="lblCart" runat="server" Text="0 items in the cart"></asp:Label></asp:HyperLink>
+                
+            </div>
+            <div class="box1">
+                <h3>Products</h3>
+                <ul id="menu_products">
+                    <li id="Handbags"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/products/Handbags.aspx" /></li>
+                    <li id="Wallets"><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/products/Wallets.aspx" /></li>
+                    <li id="Cardcases"><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/products/Cardcases.aspx" /></li>
+                </ul>
+            </div>
+        </div><%-- end menu--%>
+
+        <div class="contents">
+            <div id="globalMenu">
+                <asp:Menu ID="Menu2" runat="server" Font-Size="Medium" ForeColor="White" 
+                    Orientation="Horizontal" RenderingMode="List" z-index="100"
+                    StaticEnableDefaultPopOutImage="False" Width = "100%" BackColor="Black" 
+                    BorderStyle="None" BorderWidth="2px" DataSourceID="SiteMapDataSource1" >
+                <StaticHoverStyle BackColor="#111111" ForeColor="#5555dd" Font-Bold="True" />
+                <StaticMenuItemStyle HorizontalPadding="5px" Width="140px" Font-Bold="True" />
+                <DynamicHoverStyle BackColor="#DEBA84" ForeColor="blue" Font-Bold="True" />
+                <DynamicMenuItemStyle BackColor="#DEBA84" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ForeColor="black" Height="20px" Width="140px" Font-Bold="True" />
+                    <StaticMenuStyle HorizontalPadding="3px" VerticalPadding="2px" />
+            </asp:Menu>
+            </div>
+            <br />
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        <div id="footer">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Font-Size="Small" 
+                    ForeColor="White">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/TermsAndConditions.aspx" Text="Terms and Conditions" 
+                            Value="New Item"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Sitemap.aspx" Text="Site map" Value="New Item">
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle ForeColor="#99CCFF" />
+                    <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" />
+                </asp:Menu>
+
+                <p>
+                    Copyright@Whitireia Kazu 2013  </p>
+            </div>
+            </div>
+    </form>
+<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+    ShowStartingNode="False" />
+</body>
+</html>

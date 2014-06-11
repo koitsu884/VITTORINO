@@ -1,0 +1,449 @@
+﻿/***************************************************
+ Layout
+***************************************************/
+/*-----------------------------------
+Whole page style
+-----------------------------------*/
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,
+fieldset,legend,input,textarea,pre,code,blockquote{
+margin:0;
+padding:0;
+}
+
+img{
+    border: none;
+}
+
+li{
+list-style:none;
+}
+
+img.bg {
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:-1;
+}
+
+body {
+  /*background-image: url("../../images/layout/background.jpg");
+  width:100%;
+  height:100%;*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: 50% 50%;*/
+  background-attachment:fixed;
+}
+
+body {
+ /* background-image: url("../../images/layout/background_tile.gif");*/
+}
+
+.message p
+{
+    font-style:italic;
+    font-size:medium;
+    font-family:Verdana;
+    background-color: khaki;
+}
+
+h2
+{
+    background-color:#221111;
+    border:1px solid black;
+    color:White;
+    margin:0;
+    padding:2px;
+}
+
+.ErrorMessage
+{
+    color:Red;
+}
+
+.BasicContainer
+{
+    margin:20px;
+}
+
+/*-----------------------------------
+Basic table
+-----------------------------------*/
+.basic_table
+{
+    border:1px solid maroon;
+    text-align:left;
+    margin:2px 2px 10px 2px;
+    word-wrap: break-word;
+    box-shadow:0 0 2px rgba(0,0,0,0.2);
+}
+
+.basic_table th
+{
+    padding:4px;
+    background-color:#D9D9D9;
+}
+
+.basic_table td
+{
+    padding:4px;
+}
+
+/*-----------------------------------
+Product table
+-----------------------------------*/
+.products_table
+{
+    margin:30px;
+}
+
+.productBox
+{
+    
+}
+
+.productImage
+{
+    width:160px;
+    height:160px;
+    text-align:center;
+    display:table-cell;
+     vertical-align:middle;
+}
+
+.productName
+{
+    padding:3px;
+    font-weight:bold;
+}
+
+.productName a:link {color:#221111; text-decoration:none}
+.productName a:visited {color:#221111; text-decoration:none}
+.productName a:hover {color:#224444; text-decoration:none}
+.productName a:active {color:#224444; text-decoration:none} 
+
+.productPrice
+{
+    padding:3px;
+    color:Maroon;
+}
+/*.products
+{
+    border:0;
+    padding:0;
+    margin:auto;
+}
+
+.productBox table
+{
+    margin:0;
+    padding:0;
+    width:150px;
+    vertical-align:bottom;
+}
+
+.productBox td
+{
+    text-align:center;
+}
+
+.productBox .image
+{
+    width:150px;
+    height:150px;
+}*/
+
+/*-----------------------------------
+Product details
+-----------------------------------*/
+.product_pic
+{
+    width:396px;
+    margin:2px;
+    float:left;
+}
+
+.product_pic img
+{
+    width:396px;
+}
+
+.product_info
+{
+    width:392px;
+    margin:2px;
+    padding:2px;
+    float:left;
+}
+
+/*-----------------------------------
+Login form
+-----------------------------------*/
+
+/*-----------------------------------
+Wrapper, header
+-----------------------------------*/
+#container
+{
+    width:1000px;
+    margin:auto;
+    background-color:#eeeedd;
+}
+
+#Logo
+{
+    float:left;
+}
+
+/*-----------------------------------
+Login form
+-----------------------------------*/
+#login_form
+{
+    /*width:100%;*/
+    /*width:390px;*/
+    margin:auto;
+    text-align:right;
+    font-size:small;
+    color:White;
+    height:66px;
+    float:right;
+}
+
+#login_form table
+{
+    margin:0;
+}
+
+/*.login input[type="text"]
+{
+    height:15px;
+    width:80px;
+} 
+
+.login input[type="password"]
+{
+    height:15px;
+    width:80px;
+}
+
+.login input[type="submit"]
+{
+    width:70px;
+    font-size:50%;
+} 
+
+.login label
+{
+    height:15px;
+    width:100px;
+    font-size:small;
+    color:Blue;
+
+}*/
+
+/*-----------------------------------
+Side menu
+-----------------------------------*/
+#breadcrumbs
+{
+    height:50px;
+}
+
+
+/* menu -----------------------------*/
+div.menu
+{
+    clear:both;
+    float:left;
+    text-align:left;
+    width:172px;
+    padding:2px;
+    margin:2px;
+}
+
+
+
+/*-----------------------------------
+Contents page
+-----------------------------------*/
+
+/*#globalMenu
+{
+    margin:0 2px;
+    padding:3px;
+}*/
+
+/*#globalMenu ul
+{
+    margin:3px;
+    padding:3px;
+}
+*/
+#globalMenu li
+{
+
+    z-index:100;
+}
+
+div.contents
+{
+    float:right;
+    width:812px;
+    margin:2px;
+    padding:2px;
+}
+
+
+
+/*-----------------------------------
+header & footer
+-----------------------------------*/
+#header 
+{
+    margin:0;
+    padding:5px;
+    height:112px;
+    background-image:url("../../images/layout/header_footer.png");
+}
+
+#logo
+{
+    margin:30px 10px 10px 10px;
+}
+
+
+#footer 
+{
+    /*float:none;*/
+    clear:both;
+    padding:5px;
+    height:112px;
+    color:White;
+    text-align:center;
+    /*background-color:Black;*/
+    background-image:url("../../images/layout/header_footer.png");
+}
+
+
+
+
+
+
+/*-------------------------------------
+About us
+-------------------------------------*/
+#companyImage
+{
+    text-align:center;
+    border:2px Groove Black;
+    margin:5px; 
+}
+
+
+.box1
+{
+    margin: 10px 0;
+    padding:0;
+    border-style:solid;
+    border-color:Brown;
+    border-width:1px;
+}
+
+.box1 h3
+{
+    margin:1px;
+    text-align:center;
+    
+    padding:3px 0 3px 0;
+    color:White;
+    background-color:#221111;
+}
+
+.box2
+{
+    border-style:solid;
+    border-color:Black;
+    border-width:1px;
+}
+
+ul#menu_products
+{
+    margin:0;
+    padding:0;
+}
+
+ul#menu_products li {
+    width:166px;
+    height:48px;
+    background-color:White;
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    border:2px solid white;
+}
+
+ul#menu_products li a{
+    display:block;
+    height:100%;
+}
+
+li#Wallets a{background:url("../../images/layout/ico_wallets.jpg");background-repeat: no-repeat;}
+li#Handbags a{background:url("../../images/layout/ico_handbags.jpg");background-repeat: no-repeat;}
+li#Cardcases a{background:url("../../images/layout/ico_card_cases.jpg");background-repeat: no-repeat;}
+/*li#Wallets a:hover{background:url("../images/layout/ico_wallets_sel.jpg");}
+li#Handbags a:hover{background:url("../images/layout/ico_handbags_sel.jpg");}
+li#Cardcases a:hover{background:url("../images/layout/ico_card_cases_sel.jpg");}
+#menu_products li a:hover{border:2px solid blue;}*/
+ul#menu_products li:hover {border:2px solid gray;}
+
+/*-------------------------------------
+ Order history
+-------------------------------------*/
+#order_history
+{
+    margin:10px;
+    padding:5px;
+}
+
+#order_history td
+{
+    vertical-align:top;
+}
+
+#order_history .orderBox
+{
+    width:400px;
+    padding:6px;
+    margin:6px;
+    float:left;
+}
+
+#order_history .orderDetailBox
+{
+    width:300px;
+    padding:6px;
+    margin:6px;
+    float:left;
+}
+
+#register_table
+{
+    margin:auto;
+    width:800px;
+    padding:10px;
+}
+
+
+/*-----------------------------------
+SiteMapPath
+-----------------------------------*/
+#SiteMapPath
+{
+    text-align:left;
+}
+
+
